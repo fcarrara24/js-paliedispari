@@ -13,6 +13,10 @@ body{
     animation: appearRight 2s;
 }
 
+#minesweeper{
+    animation: appearLeft 2s;
+}
+
 @keyframes appearRight {
     0%{transform: translate(-200%);}
     100%{transform: translate(0%);}
@@ -24,6 +28,8 @@ body{
     100%{transform: translate(0%);}
 
 }
+
+
 /* setting a proper background to data input */
 #data{
     background-color: transparent;
@@ -52,3 +58,4 @@ body{
     justify-content: center;
     align-items: center;
 }
+

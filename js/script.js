@@ -31,7 +31,7 @@ guessBtn.addEventListener('click', function () {
     let even = document.getElementById("pari");
     let rndNum = rndInt(1, 5);
     num = parseInt(num);
-    document.getElementById('guessResponse').innerHTML = '';
+    document.getElementById('guessResponse').innerHTML = ``;
     //setting a timeout for the function
     diceAnimation();
     setTimeout(function () {
