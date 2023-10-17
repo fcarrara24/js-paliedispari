@@ -26,18 +26,24 @@ btn.addEventListener('click', function () {
 });
 
 guessBtn.addEventListener('click', function () {
-    let num = document.getElementById("guessOutput").textContent;
+    let num = document.getElementById("diceHuman").innerHTML;
+    console.log(num)
     let even = document.getElementById("pari");
     let rndNum = rndInt(1, 5);
     num = parseInt(num);
+    document.getElementById('guessResponse').innerHTML = '';
+    //setting a timeout for the function
+    diceAnimation();
+    setTimeout(function () {
+        document.getElementById('diceBot').innerHTML = rndNum;
+        if ((isEven(num + rndNum) && even.checked) || (!isEven(num + rndNum) && !even.checked)) {
+            document.getElementById('guessResponse').innerHTML = `<i class="fa-solid fa-trophy" style="color: #d4af37;"></i>`;
 
-    if ((isEven(num + rndNum) && even.checked) || (!isEven(num + rndNum) && !even.checked)) {
-        document.getElementById('guessResponse').innerHTML = `Io avevo detto ${rndNum}\n Complimenti! hai vinto`;
-
-    } else {
-        document.getElementById('guessResponse').innerHTML = `Io avevo detto ${rndNum}\n Peccato, hai perso`;
-    }
-    document.getElementById('guessResponse').style = "block";
+        } else {
+            document.getElementById('guessResponse').innerHTML = `<i class="fa-solid fa-face-sad-tear" style="color: #144190;"></i>`;
+        }
+        document.getElementById('guessResponse').style = "block";
+    }, 3000);
 });
 
 function updateTextInput(passInput, passValue) {
@@ -52,6 +58,32 @@ function updateTextInput(passInput, passValue) {
 
 }
 
+
+function diceAnimation() {
+    for (let i = 0; i < 2; i++) {
+        const botDice = document.getElementById('diceBot')
+        botDice.innerHTML = '?';
+        botDice.animate(
+            [
+                // keyframes
+                { fontSize: "1em", },
+                { fontSize: "2em" },
+                { fontSize: "1em" },
+                { fontSize: "2em" },
+                { backgroundColor: "white", fontSize: "1em", color: "white" }
+
+            ],
+            {
+                // timing options
+                duration: 3000,
+            },
+
+        );
+
+    };
+
+
+}
 
 
 

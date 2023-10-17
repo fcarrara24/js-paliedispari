@@ -32,3 +32,23 @@ function isPalindrome(string) {
     }
     return true;
 }
+
+/**
+ * shakes if an error occurs
+ */
+function animateError() {
+    //animation
+    document.getElementById("palindrome").animate(
+        [
+            // keyframes
+            { transform: "translatex(0px)" },
+            { transform: "translatex(-15px)" },
+            { transform: "translatex(15px)" },
+            { transform: "translatex(0px)" },
+        ],
+        {
+            // timing options
+            duration: 250,
+        },
+    );
+}
