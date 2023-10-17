@@ -1,0 +1,31 @@
+body{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(https://media.istockphoto.com/id/1025881668/photo/panoramic-background-from-natural-birch-board.jpg?s=612x612&w=0&k=20&c=COScXCU2jayTCnVq0phuekfXGyA0bTvAa9TpgspJOqg=);
+    overflow-x: hidden;
+}
+
+#palindrome{
+    animation: appearLeft 2s;
+}
+
+#evenOrOdd{
+    animation: appearRight 2s;
+}
+
+@keyframes appearRight {
+    0%{transform: translate(-200%);}
+    100%{transform: translate(0%);}
+
+}
+
+@keyframes appearLeft {
+    0%{transform: translate(+200%);}
+    100%{transform: translate(0%);}
+
+}
+/* setting a proper background to data input */
+#data{
+    background-color: transparent;
+    border-radius: 25%;
+}

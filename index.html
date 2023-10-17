@@ -9,20 +9,36 @@
 </head>
 
 <body>
-    <div id="app">
-        <h1>Stringa Palindroma</h1>
+    <div class="container">
+        <div id="palindrome" class="pb-3 pt-4 d-flex flex-column align-items-center ">
+            <h1 class="m-3 text-uppercase">Stringa Palindroma?</h1>
+            <!-- data -->
+            <label for="data" class="m-1">Inserire la stringa da verificare se palindroma </label>
+            <input type="text" id="data" name="data" class="m-3">
+            <!-- send -->
+            <button class="btn btn-primary m-1">Invia</button>
+            <!-- output / errore -->
+            <div class="alert d-none m-1"></div>
+        </div>
 
-        <!-- data -->
-        <label for="data">Inserire la rstringa da verificare se palindroma </label>
-        <input type="text" id="data" name="data">
-
-        <!-- send -->
-        <button>Invia</button>
-
-        <!-- output / errore -->
-        <div class="alert d-none"></div>
+        <!-- pari o dispari -->
+        <div id="evenOrOdd" class="d-flex flex-column align-items-center">
+            <h1 class="text-center pt-5 text-uppercase">pari o dispari?</h1>
+            <div class="radio-container m-1">
+                <input type="radio" name="pariDisp" id="pari" checked>
+                <label for="pari">pari</label>
+                <input type="radio" name="pariDisp" id="dispari">
+                <label for="dispari">dispari</label>
+            </div>
+            <div class="wrapper m-1">
+                <input type="range" name="gessRange" id="guessRange" min="1" max="5" step="1" value="1"
+                    oninput="updateTextInput('guessRange', 'guessOutput')">
+                <label for="guessRange"> <output id="guessOutput">1</output></label>
+            </div>
+            <button id="guess-submitter" class="btn btn-primary">Tenta</button>
+            <div id="guessResponse" style="display: none;"></div>
+        </div>
     </div>
-
     <script src="js/script.js"></script>
     <script src="js/utilities.js"></script>
 </body>
